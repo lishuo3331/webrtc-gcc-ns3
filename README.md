@@ -125,18 +125,18 @@ CXX="clang++" ./waf configure
 ```
 cd ns-allinone-3.31/ns-3.31  
 source /etc/profile  
-CXX="clang++" ./waf configure  
+CXX="clang++ -ldl" ./waf configure  
 ./waf build  
 
 ```
 3 Create a folder named traces under ns-allinone-3.31/ns-3.31/. The traced data can be found there.  
 4 Run the example in simulation mode (ns3 event time):
 ```
-./waf run "scratch/webrtc-static --m=simu"  
+./waf --run "scratch/webrtc-static --m=simu"  
 ```
 5 Run the example in emulation mode (real clock):   
 ```
-./waf run "scratch/webrtc-static --m=emu"  
+./waf --run "scratch/webrtc-static --m=emu"  
 ```
 The code here is used by [gym](https://github.com/OpenNetLab/gym) to build reinforce learning based congestion controller.  
 ## Results:  
